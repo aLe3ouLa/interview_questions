@@ -78,5 +78,23 @@ Actually no, these wonderful sitautions won't happen often. We rarely discuss a 
 
 ### 2: Drop the constants
 
+```javascript d
+function minmax(array) {
+  let min = Math.
+  let max = Math.
+  for (let i = 0; i <= array.length; i++) {
+    if (i < min) {
+      min = i;
+    }
+  }
+
+  for (let j = 0; j <= array.length; j++) {
+    if (j > max) {
+      max = j;
+    }
+  }
+}
+```
+
 Rule 3: Different terms for different inputs
 Rule 4: Drop the non-dominant terms
