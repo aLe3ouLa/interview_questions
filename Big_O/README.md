@@ -93,14 +93,16 @@ function minmax(array) {
     }
   }
 
-    return [min,max]
+  return [min, max];
 }
 
-console.log(minmax([11,23,4,2,5,6,7,8,9,10]));
-
+console.log(minmax([11, 23, 4, 2, 5, 6, 7, 8, 9, 10]));
 ```
 
 In this above example there are two for-loops in the array of size N. One might tempted to count the number of instructions, but this is a complicated road to take. Big-O allows us to express how the runtime scales. O(2N) scales proportianaly to O(N), both are linear. So we can drop the constants and say that the algorithm is O(N).
 
-Rule 3: Different terms for different inputs
-Rule 4: Drop the non-dominant terms
+### 3: Drop the non-dominant terms
+
+There are cases that the complexity could be described with several terms as O(N^2 + N). The idea of dropping the non-dominant term is based on the principle that as the input size growing, the term with the highest growth rate will far outstrip the others, making the smaller terms negligible. So O(N^2 + N) can be simple written as O(N^2).
+
+### 4: Different terms for different inputs
