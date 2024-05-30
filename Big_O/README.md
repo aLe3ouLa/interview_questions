@@ -106,3 +106,29 @@ In this above example there are two for-loops in the array of size N. One might 
 There are cases that the complexity could be described with several terms as O(N^2 + N). The idea of dropping the non-dominant term is based on the principle that as the input size growing, the term with the highest growth rate will far outstrip the others, making the smaller terms negligible. So O(N^2 + N) can be simple written as O(N^2).
 
 ### 4: Different terms for different inputs
+
+In the case we have different inputs in our functions, we should use different terms for calculating the complexity of this algorithm.
+
+```javascript
+function minmax(array1, array2) {
+  let min = 0;
+  let max = 0;
+  for (let i = 0; i <= array1.length; i++) {
+    if (array1[i] < array1[min]) {
+      min = i;
+    }
+  }
+
+  for (let j = 0; j <= array2.length; j++) {
+    if (array2[j] > array2[max]) {
+      max = j;
+    }
+  }
+
+  return [min, max];
+}
+
+console.log(minmax([11, 23, 4, 2, 5, 6, 7, 8, 9, 10], [1,2,3]));
+```
+
+Here we have two different arrays, where we find the min value index in the first one and the max value index in the second one. Even though it looks similar with previous example, we have to be cautious that array1 and array2 can have different length. So we have to use different terms to annotate them. In this case, we can say that M is the length of array1, and N is the length of array2. So the Big-O of this operation is O(M+N).
