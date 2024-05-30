@@ -6,6 +6,7 @@ class MyArray {
 
   push(value) {
     this.storage[this.size++] = value;
+    return this.size;
   }
 
   pop() {
